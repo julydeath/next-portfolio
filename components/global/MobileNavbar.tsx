@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
-import {routes} from "@/data/global";
+import { routes } from "@/data/global";
 //import useDelayedRender from "use-delayed-render";
 
 export default function MobileNavbar() {
@@ -51,25 +51,25 @@ export default function MobileNavbar() {
           <CrossIcon data-hide={!isMenuOpen} />
         </button>
       </div>
-      {/* {isMenuMounted && (
+      {isMenuOpen && (
         <ul
-          className={`menu flex flex-col absolute bg-bg
-            ${isMenuRendered && "menuRendered"}`}
+        // className={`menu flex flex-col absolute bg-bg
+        //   ${isMenuRendered && "menuRendered"}`}
         >
           {routes.map((item, index) => {
             return (
               <li
-                className="border-b border-gray-900 text-gray-100 text-sm font-semibold"
+                className="border-b border-gray-900 text-gray-100 text-sm font-semibold "
                 style={{ transitionDelay: `${150 + index * 25}ms` }}
               >
-                <Link href={item.path}>
+                <Link legacyBehavior href={item.path}>
                   <a className="flex w-auto pb-4">{item.title}</a>
                 </Link>
               </li>
             );
           })}
         </ul>
-      )} */}
+      )}
     </nav>
   );
 }
