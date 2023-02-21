@@ -9,7 +9,7 @@ const projects: Project[] = [
     img: "/static/projects/myfirst.png",
     link: "https://firstapp-psi.vercel.app/",
     github: "https://github.com/julydeath/firstapp",
-    tags: ["React", "CSS"],
+    tags: ["react", "css"],
   },
   {
     id: 1,
@@ -18,7 +18,7 @@ const projects: Project[] = [
     img: "/static/projects/todo.png",
     link: "https://todo-tan-five.vercel.app/",
     github: "https://github.com/julydeath/todo",
-    tags: ["HTML", "CSS", "Javascript", "React", "Directus"],
+    tags: ["html", "css", "javascript", "react", "directus"],
   },
   {
     id: 2,
@@ -65,4 +65,4 @@ projects.forEach((project) => {
 
 export const allKebabTags = allTags.map((tag) => kebabCase(tag));
 
-export default projects;
+export { projects };

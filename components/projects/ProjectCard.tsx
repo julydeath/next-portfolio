@@ -17,6 +17,7 @@ function ProjectCard({ project }) {
         <img
           className="w-full rounded-md"
           src={project.img}
+          // src={`https://yd7rfuz9.directus.app/assets/${project.img}`}
         />
       </a>
       <div className="w-full mt-5">
