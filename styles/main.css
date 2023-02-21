@@ -105,16 +105,6 @@ body::-webkit-scrollbar-thumb {
   margin-top: 24px;
 }
 
-.testimonialQuote::before {
-  content: "“";
-  position: absolute;
-  top: -10px;
-  left: -46px;
-  opacity: 0.75;
-  font-size: 80px;
-  @apply text-fun-pink;
-}
-
 /* BLOG */
 
 /* .prose {

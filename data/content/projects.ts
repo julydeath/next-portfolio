@@ -17,8 +17,8 @@ const projects: Project[] = [
     desc: "To-Do app using react and directus",
     img: "/static/projects/todo.png",
     link: "https://todo-tan-five.vercel.app/",
-    github:"https://github.com/julydeath/todo",
-    tags: ["HTML", "CSS", "Javascript","react","directus"],
+    github: "https://github.com/julydeath/todo",
+    tags: ["HTML", "CSS", "Javascript", "React", "Directus"],
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const projects: Project[] = [
     img: "/static/projects/blog.png",
     link: "https://first-blog-omega.vercel.app/",
     github: "https://github.com/julydeath/first-blog",
-    tags: ["React", "css", "directus"],
+    tags: ["React", "CSS", "Directus"],
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const projects: Project[] = [
     desc: "A small project for birthday reminder",
     img: "/static/projects/bdayreminder.png",
     link: "https://projects-lake.vercel.app/",
-    tags: ["React", "css"],
+    tags: ["React", "CSS"],
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const projects: Project[] = [
     desc: "Basic auth with sign-up,login,logout feature using firebase",
     img: "/static/projects/auth.png",
     github: "https://github.com/julydeath/first-auth",
-    link:"https://first-auth.vercel.app/",
+    link: "https://first-auth.vercel.app/",
     tags: ["Node", "Javascript", "NPM", "HTML"],
   },
   {
@@ -51,21 +51,18 @@ const projects: Project[] = [
     title: "Reviews",
     desc: "Reviews project using react",
     img: "/static/projects/reviews.png",
-    link:"https://reviews-green.vercel.app/",
+    link: "https://reviews-green.vercel.app/",
     github: "https://github.com/julydeath/projects/tree/reviews",
-    tags: ["React", "css"],
+    tags: ["React", "CSS"],
   },
- 
 ];
 
-export const allTags = []
+export const allTags = [];
 
 projects.forEach((project) => {
-  project.tags.forEach((tag) => !allTags.includes(tag) && allTags.push(tag))
+  project.tags.forEach((tag) => !allTags.includes(tag) && allTags.push(tag));
 });
 
-export const allKebabTags = allTags.map(tag => (
-  kebabCase(tag)
-))
+export const allKebabTags = allTags.map((tag) => kebabCase(tag));
 
-export default projects
+export default projects;
