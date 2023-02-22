@@ -1,21 +1,40 @@
+import React, { useState, useEffect, createContext } from "react";
 import CTA from "@/components/home/CTA";
 import Hero from "@/components/home/Hero";
 import Page from "@/components/utility/Page";
-// import Posts from "@/components/home/Posts";
 import Projects from "@/components/home/Projects";
 import Skills from "@/components/home/Skills";
-// import { allPosts } from "contentlayer/generated";
-// import { GetStaticProps } from "next";
+import axios from "axios";
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   return {
-//     props: {
-//       allPosts: allPosts.sort(({date: dateA}: any, {date: dateB}: any) => dateB - dateA),
-//     },
-//   };
-// }
+type Context = {
+  id: number;
+  title: string;
+  desc: string;
+  img: string;
+  link: string;
+  github: string;
+  tags: string[];
+};
+
+export const Usercontext: any = createContext<Context | null>(null);
 
 export default function Home() {
+  const [projectsDynamic, setProjectsDynamic] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://yd7rfuz9.directus.app/items/projects")
+      .then(({ data }) => {
+        const formattedData = data.data.map((obj) => {
+          return {
+            ...obj,
+            img: `https://yd7rfuz9.directus.app/assets/${obj.img}`,
+          };
+        });
+        setProjectsDynamic(formattedData);
+      });
+  }, []);
+
   return (
     <Page
       currentPage="Home"
@@ -25,9 +44,10 @@ export default function Home() {
     >
       <Hero />
       <div className="mt-20 space-y-32">
-        <Projects />
+        <Usercontext.Provider value={projectsDynamic}>
+          <Projects />
+        </Usercontext.Provider>
         <Skills />
-        {/* <Posts allPosts={allPosts} /> */}
       </div>
       <CTA />
     </Page>
