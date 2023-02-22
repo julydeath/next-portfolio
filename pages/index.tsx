@@ -5,18 +5,19 @@ import Page from "@/components/utility/Page";
 import Projects from "@/components/home/Projects";
 import Skills from "@/components/home/Skills";
 import axios from "axios";
+import { Project } from "types";
 
-type Context = {
-  id: number;
-  title: string;
-  desc: string;
-  img: string;
-  link: string;
-  github: string;
-  tags: string[];
-};
+// type Context = {
+//   id: number;
+//   title: string;
+//   desc: string;
+//   img: string;
+//   link: string;
+//   github: string;
+//   tags: string[];
+// };
 
-export const Usercontext: any = createContext<Context | null>(null);
+export const Usercontext: any = createContext<Project | null>(null);
 
 export default function Home() {
   const [projectsDynamic, setProjectsDynamic] = useState([]);
