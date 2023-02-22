@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { projects } from "@/data/content/projects";
 import { Project } from "types";
-import { kebabCase } from "@/utils/utils";
-import Link from "next/link";
-import Image from "next/image";
+// import { kebabCase } from "@/utils/utils";
+// import Link from "next/link";
+// import Image from "next/image";
 import ProjectCard from "./ProjectCard";
 import axios from "axios";
 

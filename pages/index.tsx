@@ -6,7 +6,7 @@ import Projects from "@/components/home/Projects";
 import Skills from "@/components/home/Skills";
 import axios from "axios";
 
-type contest = {
+type Context = {
   id: number;
   title: string;
   desc: string;
@@ -16,7 +16,7 @@ type contest = {
   tags: string[];
 };
 
-export const Usercontext: any = createContext<contest | null>(null);
+export const Usercontext: any = createContext<Context | null>(null);
 
 export default function Home() {
   const [projectsDynamic, setProjectsDynamic] = useState([]);
