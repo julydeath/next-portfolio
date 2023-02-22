@@ -1,18 +1,19 @@
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import SectionTitle from "../global/SectionTitle";
 import { projects } from "@/data/content/projects";
-
 import ProjectCard from "../projects/ProjectCard";
+import { Usercontext } from "pages";
 
 function Projects() {
+  const data: any = useContext(Usercontext);
   return (
     <div className="flex flex-col text-left justify-between pt-8 relative">
       <div id="learnmore">
         <SectionTitle title="Here are a few of my favorite projects." />
       </div>
       <div className="grid grid-cols-1 gap-12 md:gap-5 md:grid-cols-3 items-start">
-        {projects.slice(0, 3).map((item) => {
+        {data.slice(0, 3).map((item) => {
           return <ProjectCard key={item.id} project={item} />;
         })}
       </div>
