@@ -60,11 +60,12 @@ function Hero() {
           offset={-30}
           smooth={true}
           duration={500}
-        >
-        </ScrollLink>
-          <div className="cursor-pointer font-bold whitespace-nowrap px-10 py-4 text-fun-white border-2 text-xl rounded-full border-fun-white bg-bg hover:bg-fun-pink hover:text-white hover:border-fun-pink transition-colors">
-            <a href="/static/cv/cvv.pdf" download="/static/cv/cvv.pdf">Download CV</a>
-          </div>
+        ></ScrollLink>
+        <div className="cursor-pointer font-bold whitespace-nowrap px-10 py-4 text-fun-white border-2 text-xl rounded-full border-fun-white bg-bg hover:bg-fun-pink hover:text-white hover:border-fun-pink transition-colors">
+          <a href="/static/cv/resume.pdf" download="/static/cv/resume.pdf">
+            Download CV
+          </a>
+        </div>
       </div>
     </>
   );
