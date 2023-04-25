@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { projects } from "@/data/content/projects";
 import { Project } from "types";
-// import { kebabCase } from "@/utils/utils";
-// import Link from "next/link";
-// import Image from "next/image";
 import ProjectCard from "./ProjectCard";
 import axios from "axios";
 
@@ -14,18 +11,20 @@ type ProjectProps = {
 const Projects = ({ overwriteProjects }: ProjectProps) => {
   const projectsList = overwriteProjects ? overwriteProjects : projects;
   const [projectsDynamic, setProjectsDynamic] = useState([]);
+  console.log(projectsDynamic);
 
   useEffect(() => {
     axios
-      .get("https://yd7rfuz9.directus.app/items/projects")
+      .get("https://apparent-chipmunk-86.hasura.app/api/rest/projects")
       .then(({ data }) => {
-        const formattedData = data.data.map((obj) => {
-          return {
-            ...obj,
-            img: `https://yd7rfuz9.directus.app/assets/${obj.img}`,
-          };
-        });
-        setProjectsDynamic(formattedData);
+        setProjectsDynamic(data.portfolio);
+        // const formattedData = data.data.map((obj) => {
+        //   return {
+        //     ...obj,
+        //     img: `https://yd7rfuz9.directus.app/assets/${obj.img}`,
+        //   };
+        // });
+        // setProjectsDynamic(formattedData);
       });
   }, []);
 

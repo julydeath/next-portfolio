@@ -21,18 +21,22 @@ export const Usercontext: any = createContext<Project | null>(null);
 
 export default function Home() {
   const [projectsDynamic, setProjectsDynamic] = useState([]);
+  console.log(projectsDynamic);
 
   useEffect(() => {
     axios
-      .get("https://yd7rfuz9.directus.app/items/projects")
+      .get("https://apparent-chipmunk-86.hasura.app/api/rest/projects")
       .then(({ data }) => {
-        const formattedData = data.data.map((obj) => {
-          return {
-            ...obj,
-            img: `https://yd7rfuz9.directus.app/assets/${obj.img}`,
-          };
-        });
-        setProjectsDynamic(formattedData);
+        setProjectsDynamic(data.portfolio);
+        // .get("https://yd7rfuz9.directus.app/items/projects")
+        // .then(({ data }) => {
+        //   const formattedData = data.data.map((obj) => {
+        //     return {
+        //       ...obj,
+        //       img: `https://yd7rfuz9.directus.app/assets/${obj.img}`,
+        //     };
+        //   });
+        //   setProjectsDynamic(formattedData);
       });
   }, []);
 
