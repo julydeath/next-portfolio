@@ -13,7 +13,7 @@ function Projects() {
         <SectionTitle title="Here are a few of my favorite projects." />
       </div>
       <div className="grid grid-cols-1 gap-12 md:gap-5 md:grid-cols-3 items-start">
-        {data.slice(0, 3).map((item) => {
+        {projects.slice(0, 3).map((item) => {
           return <ProjectCard key={item.id} project={item} />;
         })}
       </div>
